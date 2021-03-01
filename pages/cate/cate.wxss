@@ -1,0 +1,100 @@
+.cate-root {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+.toolbar-root {
+  flex-shrink: 0;
+}
+.cate-container {
+  overflow: hidden;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  /* 部分ios真机不加上height: 100%;出现flex-grow: 1无效，会根据内容填充布局 */
+  height: 100%;
+  width: 100%;
+}
+.scroll-left {
+  width: 160rpx;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.scroll-right {
+  flex: 1;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+.cate-item {
+  line-height: 80rpx;
+  text-align: center;
+  color: #666666;
+  font-size: 12px;
+  font-weight: 500;
+}
+.active-item {
+  background-color: white;
+  font-weight: 700;
+  color: var(--themeColorLight);
+  width: 100%;
+  position: relative;
+}
+.active-item:before {
+  content: '';
+  width: 4px;
+  background-color: var(--themeColorLight);
+  height: 40rpx;
+  top: 20rpx;
+  position: absolute;
+  left: 0;
+}
+.page-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page-row .page-item {
+  width: 33.33%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pro-img {
+  width: 95%;
+  height: 200rpx;
+}
+.pro-name {
+  font-size: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  color: #1a1a1a;
+  margin-top: 5px;
+  line-height: 15px;
+  padding: 0 5px;
+}
+.loading-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-img {
+  width: 40px;
+  height: 40px;
+}

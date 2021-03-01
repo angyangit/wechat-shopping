@@ -1,0 +1,21 @@
+.search-tag-comp {
+  padding-left: 10px;
+}
+.search-tag-comp > view {
+  line-height: 30px;
+
+  font-weight: 700;
+}
+.search-tag-comp > .tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag-wrapper > .tag-item {
+  background-color: #f1f1f1;
+  color: #666;
+  font-size: 14px;
+  padding: 4rpx 12rpx;
+  margin-right: 10px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}

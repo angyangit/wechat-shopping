@@ -1,0 +1,32 @@
+<view class="cate-wrapper" bindtouchstart="cateTouchStart" bindtouchmove="cateTouchMove" bindtouchend="cateTouchEnd">
+  <view class="cate-bg">
+    <image class='cate-bg-img' src="../../resources/images/bg-cate.png" />
+  </view>
+  <view id="cateContainer" class="cate-container">
+    <view class="cate-item-wrapper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="white" indicator-active-color="#e33e33">
+        <swiper-item>
+          <view class="cate-item-l">
+            <view class="cate-item-child" wx:for="{{getFristCats}}" wx:key="*this">
+              <view class="child-wrapper">
+                <image class="cate-icon" src="{{item.icon}}" />
+                <text class="cate-name">{{ item.name }}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="cate-item-r">
+            <view class="cate-item-child" href="" wx:for="{{getSecondCats}}"
+            wx:key="*this">
+              <view class="child-wrapper">
+                <image class="cate-icon" src="{{item.icon}}" />
+                <text class="cate-name">{{ item.name }}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

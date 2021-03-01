@@ -1,0 +1,20 @@
+<view class="toolbar-wrapper" xmlns:wx="">
+    <view class="toolbar-fiexd">
+        <view style="height:{{statusbarHeight}}px;"></view>
+        <view class='toolbar-content' style="height:{{navBarHeight}}px;">
+            <i class="icon-cebianlanshouqi back-icon" wx:if='{{hasBack}}' bind:tap="back"></i>
+            <view class="searchbar-wrapper" wx:if="{{isSearch||isRealSearch}}" style="margin-left:{{hasBack?76:26}}rpx;">
+                <i class="icon-sousuo serch-icon"></i>
+                <text bind:tap="toSearchPage" wx:if="{{!isRealSearch}}" class='tip'>请输入内容</text>
+                <input value="{{iptValu}}" bindinput="inputChange" placeholder-style="color:#ddd" style="padding-left:10px;font-size:14px" wx:if="{{isRealSearch}}" placeholder="请输入" />
+                <view style="padding:0 10px" bind:tap="clearInput">
+                    <i wx:if="{{iptValu}}" class="icon-iconfontclose2  clear-icon"></i>
+                </view>
+            </view>
+            <view style='line-height:{{navBarHeight}}px;width:100%;font-size:14px' class="toolbar-title" wx:else>
+                {{title}}
+            </view>
+        </view>
+    </view>
+    <view style="height:{{navBarHeight+statusbarHeight}}px;"></view>
+</view>

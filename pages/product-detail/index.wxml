@@ -1,0 +1,206 @@
+<wxs src="../../utils/filter.wxs" module="util" />
+<view class="pro-detail-root">
+  <view class="header" style="height:{{navBarHeight+statusbarHeight}}px;padding-top:{{statusbarHeight}}px;">
+    <view class='header-icon-l' bind:tap='back' style="line-height:{{navBarHeight}}px;height:{{navBarHeight}}px">
+      <i class='icon-cebianlanshouqi'></i>
+    </view>
+    <view class='header-tab' bind:tap='tabClick' style="height:{{navBarHeight}}px;">
+      <view style="line-height:{{navBarHeight}}px;height:{{navBarHeight}}px" data-idx="productWrapper" class='{{tabIndex=="productWrapper"?"tab-active":""}}'>
+        商品
+      </view>
+      <view style="line-height:{{navBarHeight}}px;height:{{navBarHeight}}px" data-idx="commentWrapper" class='{{tabIndex=="commentWrapper"?"tab-active":""}}'>
+        评价
+      </view>
+      <view style="line-height:{{navBarHeight}}px;height:{{navBarHeight}}px" data-idx="detailtWrapper" class='{{tabIndex=="detailtWrapper"?"tab-active":""}}'>
+        详情
+      </view>
+      <view style="line-height:{{navBarHeight}}px;height:{{navBarHeight}}px" data-idx="recommendWrapper" class='{{tabIndex=="recommendWrapper"?"tab-active":""}}'>
+        推荐
+      </view>
+    </view>
+  </view>
+  <scroll-view wx:if="{{proInfo}}" class="scroll-content" scroll-y="{{true}}" scroll-into-view="{{tabIndex}}">
+    <view class='pro-info-wrapper' id='productWrapper'>
+      <view class='pro-top'>
+        <swiper style="height:200px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="white" indicator-active-color="#e33e33">
+          <block wx:for="{{proImgList}}" wx:key="*this">
+            <swiper-item>
+              <view class="swiper-item">
+                <image mode="heightFix" class="swiper-image" style="height:100%" src="{{item}}" />
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='pro-info-container'>
+          <view class='frist-wrapper'>
+            <text class="price ">
+              <text>¥</text>
+              <text class='large_size'>{{proInfo.price}}</text>
+              <text class="price_decimals">.00</text>
+            </text>
+            <text class="old_price">¥{{proInfo.originalPrice}}</text>
+            <view class='collect'>
+              <i class='icon-cebianlan-wodeshoucang-weixuanzhong ic-collect'></i>
+              <text>收藏</text>
+            </view>
+          </view>
+          <view class='sec-wrapper'>
+            <image style="width:50px;height:15px" src='../../resources/images/jd-market.png' />
+            <text>一站式囤生活好物</text>
+          </view>
+          <view class='third-wrapper'>{{proInfo.name}}</view>
+          <view class='four-wrapper' style='font-size: 16px;color: #ccc;margin-top: 10px'>
+            {{proInfo.subTitle}}
+          </view>
+        </view>
+      </view>
+      <view class='dis-info-wrapper' bind:tap='showDisPop'>
+        <view class="mod_discount">
+          <text class="title">优惠</text>
+          <view class="content">
+            <view class="detail_prom" style="">
+              <view class="de_row prom_item">
+                <view class="de_tag" tag="10">
+                  <text class="gift_red_icon">赠品</text>
+                </view>
+                <view class="de_span line1">
+                  <text>
+                    <text id="giftDefaultGiftDesc">购买立享2件赠品（条件：购买2件及以上，赠完即止）</text>
+                  </text>
+                </view>
+              </view>
+              <view class="de_row prom_item">
+                <view class="de_tag" tag="3">
+                  <text class="hl_red_bg">限购</text>
+                </view>
+                <view class="de_span line1">
+                  <text>购买1-12件时享受单件价￥269，超出数量以结算价为准</text>
+                </view>
+              </view>
+              <view class="de_row prom_item">
+                <view class="de_tag" tag="0">
+                  <text class="hl_red_bg">满额返券</text>
+                </view>
+                <view class="de_span line1">
+                  <text>购母婴玩具食品清洁个护生鲜电脑数码家电医药酒水图书汽车部分自营商品满1元返券包</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='comment-wrapper' id='commentWrapper'>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+      <view>djkdj</view>
+    </view>
+    <rich-text id='detailtWrapper' class='detail-wrapper' nodes='{{proInfo.detailHtml}}'></rich-text>
+    <view class='recommend-wrapper' id='recommendWrapper' style="padding-bottom:20px">
+      <view class='guess-like-wrapper'>
+        <text></text>
+        猜你喜欢
+      </view>
+      <view class='recommend-container' id="recommendWrapper">
+        <swiper indicator-color="#999" style="height:1250rpx" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#e33e33">
+          <block wx:for="{{recommendList}}" wx:for-item="parent" wx:for-index="pIndex" wx:key="*this">
+            <swiper-item class="s-item" style="width:100%">
+              <view class='recommend-child-item' wx:for="{{parent}}" wx:for-item="child" wx:for-index="index">
+                <view class="pro-item">
+                  <image mode='heightFix' class="pro-img" src="{{child.pic}}" />
+                  <text class="pro-name">{{ child.name }}</text>
+                  <text class="pro-price">{{ child.price }}</text>
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='pro-select-pop' wx:if='{{isShowSkuPop}}' bind:tap='hideSkuPop'>
+    <transition name="slide">
+      <view class='pro-select-pop-container' catchtap="aa">
+        <view class='pro-info'>
+          <image class='pro-img' src='{{proInfo.pic}}' />
+          <view class='pro-sku'>
+            <view class="price ">
+              <text>¥</text>
+              <text class='large_size'>{{selectSkuBean&&selectSkuBean.price}}</text>
+              <text class="price_decimals">.00</text>
+            </view>
+            <view class="sku-tip">
+              已选
+              <text>{{util.getSkuTip(selectSkuBean)}}</text>
+            </view>
+          </view>
+          <i class="icon-iconfontclose2 close-icon" bind:tap='hideSkuPop'></i>
+        </view>
+        <view class='pro-content'>
+          <view class='pro-content-container'>
+            <view class='pro-sku'>
+              <view class='pro-sku-item' wx:for="{{skuStockListUi}}" wx:for-index="key" wx:for-item="value">
+                <view class='sku-name'>{{key}}</view>
+                <view class='sku-val-wraper'>
+                  <view wx:for="{{value}}" wx:for-item="skuVal" class='sku-val {{util.setSelectSkuStyle(selectSkuArr,skuVal,key)?"select-sku":""}}' catchtap='selectSku' data-skuval="{{skuVal}}" data-val="{{value}}" data-keyval="{{key}}">
+                    {{skuVal}}
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class='pro-count-wrapper'>
+              <text class='count-tip'>数量</text>
+              <view class="count-wrapper">
+                <c-countview maxCount="{{selectSkuBean.stock}}" innerCount='{{1}}' listIndex='{{index}}' bind:countChangeListener='countChange'></c-countview>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='btn-confirm' bind:tap='addShopCar'>
+          <text>确认</text>
+        </view>
+      </view>
+    </transition>
+  </view>
+  <view class='shopcar-bar'>
+    <view class='car-l'>
+      <view class='store-wraper'>
+        <i class='icon-haofangtuoiconfont_dianpu'></i>
+        <text>店铺</text>
+      </view>
+      <view class='shopcar-wraper' bind:tap='goShopCar'>
+        <i class='icon-iconfontcart'></i>
+        <text>购物车</text>
+        <text class='car-count'>0</text>
+      </view>
+    </view>
+    <view class='car-r'>
+      <view class="add-shopcar" bind:tap='toBuy'>
+        <text class="txt">加入购物车</text>
+      </view>
+      <view class="to-buy" bind:tap='toBuy'>
+        <text class="txt">立即购买</text>
+      </view>
+    </view>
+  </view>
+</view>

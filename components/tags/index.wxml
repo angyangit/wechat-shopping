@@ -1,0 +1,8 @@
+<view class="search-tag-comp">
+  <view>{{title}}</view>
+  <view class="tag-wrapper">
+    <view data-txt="{{item}}" bind:tap="tagClick" wx:for="{{taglist}}" class="tag-item">
+      {{item}}
+    </view>
+  </view>
+</view>

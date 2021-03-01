@@ -1,0 +1,12 @@
+<view class="swiper-wrapper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  indicator-color="white" indicator-active-color="#e33e33">
+    <block wx:for="{{dataList}}" wx:key="*this">
+      <swiper-item>
+        <view class="swiper-item">
+        <image class="swiper-img" lazy-load="{{true}}" src="{{item.pic}}"/>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

@@ -1,0 +1,17 @@
+<view class="toolbar-wrapper" xmlns:wx="">
+    <view class="toolbar-fiexd" style="opacity:{{1-opacity}};background:#ff3130">
+        <view style="height:{{statusbarHeight}}px;"></view>
+        <view class='toolbar-content' style="height:{{navBarHeight}}px">
+            <i class="icon-cebianlanshouqi back-icon" wx:if='{{hasBack}}'></i>
+            <view style='line-height:{{navBarHeight}}px' class="title">{{title}}</view>
+        </view>
+    </view>
+    <view class="toolbar-fiexd" style="opacity:{{opacity}}">
+        <view style="height:{{statusbarHeight}}px;"></view>
+        <view class='toolbar-content' style="height:{{navBarHeight}}px;">
+            <i class="icon-cebianlanshouqi back-icon" wx:if='{{hasBack}}'></i>
+            <view style='line-height:{{navBarHeight}}px;' class="title">{{title}}</view>
+        </view>
+    </view>
+    <view style="height:{{navBarHeight+statusbarHeight}}px;"></view>
+</view>

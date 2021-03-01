@@ -1,0 +1,54 @@
+.toolbar-fiexd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--themeColorLight);
+}
+.toolbar-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-wrapper {
+  line-height: 100%;
+  background-color: white;
+  height: 50rpx;
+  width: 50%;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.searchbar-wrapper > .serch-icon {
+  font-size: 30rpx;
+  color: var(--textGrayColor);
+}
+
+.searchbar-wrapper > .clear-icon {
+  font-size: 30rpx;
+  color: var(--textGrayColor);
+  margin-right: 10px;
+}
+.searchbar-wrapper > .tip {
+  font-size: 14px;
+  padding-left: 10rpx;
+  color: var(--textGrayColor);
+}
+
+.toolbar-title {
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+.back-icon {
+  font-size: 40rpx;
+  padding: 0 16rpx;
+  position: absolute;
+  top: 50%;
+  color: white;
+  transform: translateY(-50%);
+}

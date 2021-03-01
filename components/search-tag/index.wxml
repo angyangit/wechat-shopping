@@ -1,0 +1,5 @@
+<view>
+  <block wx:for="{{tags}}">
+    <c-tags wx:if="{{item.value.length>0}}" bind:tagClick="tagClick" taglist="{{item.value}}" title="{{item.key}}"></c-tags>
+  </block>
+</view>

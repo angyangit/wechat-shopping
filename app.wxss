@@ -1,0 +1,10 @@
+/**app.wxss**/
+@import "/resources/styles/icon.wxss";
+page{
+  font-family: "PingFangSC-Thin";
+  font-size:16px;
+  background-color: #f9f9f9;
+  --themeColor:#e33e33;
+  --themeColorLight:#ff3130;
+  --textGrayColor:#dddddd;
+}

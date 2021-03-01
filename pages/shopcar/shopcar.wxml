@@ -1,0 +1,81 @@
+<wxs src="../../utils/filter.wxs" module="util" />
+<view id="shopcar-warrper">
+  <view class="tool-wrapper">
+    <c-toolbar title="购物车" hasBack="{{false}}" />
+  </view>
+  <view class='shopcar-content' wx:if="{{!isLoad}}">
+    <view class='shopcar-page'>
+      <scroll-view class="shopcar-srcoll" scroll-y="{{true}}" wx:if="{{hasToken}}">
+        <view class='shopcar-scroll-content'>
+          <view class='address-edit-pro'>
+            <view>
+              <view class='icon-wrapper' hidden='{{isEditProduct}}'>
+                <i class='icon-iconfontdizhi1'></i>
+                地址
+              </view>
+            </view>
+            <text class='edit-pro' bind:tap='editPro'>{{isEditProduct?'完成':'编辑商品'}}</text>
+          </view>
+          <view class='pro-list-wrapper'>
+            <view class='list-top'>
+              <view bind:tap='selectAll' class='check-icon {{util.isSelectCheckAll(selectList,shopcarList)?"select-check":""}}'></view>
+              <text class='jd-zy'>京东自营</text>
+              <text class='discount'>优惠券</text>
+            </view>
+            <view class='pro-list-item' wx:for="{{shopcarList}}" wx:key="{{item.id}}">
+              <view class='pro-list-item-content'>
+                <view class='check-wrapper' data-item="{{item}}" bind:tap='itemSelect'>
+                  <i class='check-icon {{util.isSelectCheck(selectList,item.id)?"select-check":""}}'></i>
+                </view>
+                <image class='pro-img' src='{{item.productPic}}' />
+                <view class='pro-info'>
+                  <view class='title'>{{item.productSubTitle}}</view>
+                  <view class='price-count'>
+                    <view class="price">
+                      ¥
+                      <em class='large_size'>{{item.price}}</em>
+                      <text class="price_decimals">.00</text>
+                    </view>
+                    <view class="count-wrapper">
+                      <c-countview innerCount='{{item.quantity}}' listIndex='{{index}}' bind:countChangeListener='countChange'></c-countview>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class='attation-del'>
+                <view class='attation-del-content'>
+                  <text>移入关注</text>
+                  <text data-id="{{item.id}}" bind:tap='deleteItem'>删除</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class='empty-root' v-else>
+        <view class='login-wraper'>
+          登录后同步购物车数据
+          <text class='btn-login' bind:tap="toLogin">登陆</text>
+        </view>
+        <c-empty></c-empty>
+      </view>
+    </view>
+  </view>
+  <view class='cart-bottom' wx:if="{{hasToken&&!isLoad}}">
+    <view class='check-wrapper'>
+      <i bind:tap='selectAll' class='check-icon {{util.isSelectCheckAll(selectList,shopcarList)?"select-check":""}}'></i>
+      <text>全选</text>
+    </view>
+    <view class='right' wx:if='{{!isEditProduct}}'>
+      <view class='total-price-wrapper'>
+        <text>总计:</text>
+        <text>￥{{util.getTotalPrice(selectList)}}</text>
+      </view>
+      <text class='btn-pay' bind:tap='confirmOrder'>去结算({{util.getCountTotal(selectList)}}件)</text>
+    </view>
+    <view class='right-edit' wx:else>
+      <text>移至收藏</text>
+      <text bind:tap='delItemList'>删除</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-toolbar":"/components/toolbar/index",
+    "c-empty":"/components/empty/index",
+    "c-countview":"/components/countview/index"
+  }
+}

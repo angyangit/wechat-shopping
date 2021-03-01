@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-toolbar":"/components/toolbar/index",
+    "c-swiper":"/components/swiper/index",
+    "c-countview":"/components/countview/index"
+  }
+}

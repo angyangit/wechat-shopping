@@ -1,0 +1,40 @@
+<view class="goods-list-comp">
+  <view class="mul-content" wx:if="{{multipleShow}}">
+    <view class="mul-item-wrapper" wx:for="{{goodsList}}" wx:key='{{item.id}}'
+     data-cateid="{{item.productCategoryId}}"
+     data-id="{{item.id}}" bind:tap="select">
+      <view class="mul-item">
+        <image class='multiple-img' src='{{item.pic}}' />
+        <view class='multiple-name'>{{item.name}}</view>
+        <view class='multiple-price-wrapper'>
+          <text class='multiple-price'>{{item.price}}</text>
+          <text class='multiple-tip'>{{item.recommandStatus===1?'推荐':'闪购'}}</text>
+          <text class='multiple-like'>看相似</text>
+        </view>
+        <view class='multiple-ori-price'>
+          <text>{{item.originalPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:else>
+    <view wx:for="{{goodsList}}" wx:key='{{item.id}}'
+       data-cateid="{{item.productCategoryId}}"
+   data-id="{{item.id}}" bind:tap="select">
+      <view class='single-content'>
+        <image class='single-img' src='{{item.pic}}' />
+        <view class='single-info'>
+          <view class='single-name'>{{item.name}}</view>
+          <view class='single-price-wrapper'>
+            <text class='single-price'>{{item.price}}</text>
+            <text class='single-tip'>{{item.recommandStatus===1?'推荐':'闪购'}}</text>
+            <text class='single-like'>看相似</text>
+          </view>
+          <view class='single-ori-price'>
+            <text>{{item.originalPrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

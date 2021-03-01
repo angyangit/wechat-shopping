@@ -1,0 +1,7 @@
+<view class='empty-wrapper'>
+        <view class='empty-content'>
+          <image src="{{pageType === 'shopCar'? '../../resources/images/shopCar.png' :'../../resources/images/empty.png'}}" class='empty-icon'></image>
+            <view class='empty-tip'>{{pageType === "shopCar" ?
+                    "登录后同步购物车数据" : "没有查到数据哦" }}</view>
+        </view>
+    </view>

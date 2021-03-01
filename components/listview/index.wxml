@@ -1,0 +1,17 @@
+<scroll-view scroll-y class="scroll" style="height:100%" refresher-enabled="{{true}}" refresher-threshold="{{100}}" refresher-background="#f9f9f9" refresher-default-style="none" refresher-triggered="{{triggered}}" bindrefresherpulling="onPulling" bindrefresherrefresh="onRefresh" bindscrolltolower="lower">
+  <view slot="refresher" class="refresh" wx:if="{{true}}">
+    <view class="wapper">
+      <view class="img" wx:if="{{scanPercent==1}}" />
+      <block wx:else>
+        <view class="moveimg" style="transform: scale({{scanPercent}}) translateX({{-100 + scanPercent * 100}}px);" />
+        <view class="moveimg2" style="transform: translateY({{-100 + scanPercent * 100}}px);" />
+      </block>
+    </view>
+    <view class="text">{{refreshTip}}</view>
+  </view>
+  <slot name="content"></slot>
+  <view class="load-more-wrapper">
+    <image wx:if="{{!loadMoreFinish}}" class="load-more-img" src="../../resources/images/loading.gif" />
+    <text class="load-more-txt">{{loadMoreFinish?"没有更多数据":"正在加载"}}</text>
+  </view>
+</scroll-view>

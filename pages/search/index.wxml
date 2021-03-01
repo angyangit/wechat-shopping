@@ -1,0 +1,14 @@
+<view class="search-page">
+  <c-toolbar bind:clearInput="clearInput" iptValu="{{keyword}}" isRealSearch="{{true}}" bind:onBackListener="onBackListener" bind:onInputChange="onInputChange" />
+  <view class="search-page-content" wx:if="{{keyword}}">
+    <c-goods-list multipleShow="{{multipleShow}}" wx:if="{{goodsList.length>0}}" goodsList='{{goodsList}}'></c-goods-list>
+    <c-empty wx:elif="{{!isloading&&goodsList.length<=0}}"></c-empty>
+  </view>
+  <view class="search-page-tag" wx:if="{{!keyword}}">
+    <c-search-tag bind:tagClick="tagClick" tags="{{tags}}" />
+  </view>
+  <view wx:if="{{goodsList.length>0}}" bind:tap="toggleListUi" class="toggle-icon">
+    <i wx:if="{{multipleShow}}" class="icon-iconfonticon-shebei" />
+    <i wx:else class="icon-shouqi" />
+  </view>
+</view>

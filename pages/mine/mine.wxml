@@ -1,0 +1,133 @@
+<view class="mine-warrper">
+    <c-toolbar-trans title="我的" opacity="{{opacity}}" hasBack="{{false}}" />
+    <scroll-view scroll-y="{{true}}" class='mine-scroll' bindscroll="scroll">
+        <view class='mine-content'>
+            <view class='mine-header'>
+                <view class='header-top'>
+                    <image class="img" src="../../resources/images/avatar-def.png" bind:tap="login" />
+                    <view class='user-info'>
+                        <text class='uname'>{{memberInfo?memberInfo.nickname:'请登陆'}}</text>
+                        <view class='j-wraper'>
+                            <text>京享值</text>
+                            <text>查看小白信用</text>
+                        </view>
+                    </view>
+                    <view class='user-setting'>
+                        <i class='icon-iconfonticon-yonghu setting-icon'></i>
+                    </view>
+                </view>
+                <view class='header-middle'>
+                    <view class='pro-collect'>
+                        <text>33</text>
+                        <text>商品收藏</text>
+                    </view>
+                    <view class='store-collect'>
+                        <text>20</text>
+                        <text>店铺收藏</text>
+                    </view>
+                    <view class='foot-collect'>
+                        <text>19</text>
+                        <text>我的足迹</text>
+                    </view>
+                </view>
+                <view class="plus_black_wrap">
+                    <view class="inner">
+                        <view class="title">
+                            <view class="plus_title">您有5张运费券待使用</view>
+                            <view class="plus_subtitle">立即查看</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='order-wrapper'>
+                <view class='wait-pay'>
+                    <i class='icon-haofangtuoiconfont_dianpu'></i>
+                    <text>待付款</text>
+                </view>
+                <view class='wait-gathering'>
+                    <i class='icon-iconfontqiandao'></i>
+                    <text>待收款</text>
+                </view>
+                <view class='sale-serve'>
+                    <i class='icon-iconfontpingjia'></i>
+                    <text>退换/售后</text>
+                </view>
+                <view class='order-all'>
+                    <i class='icon-iconfontform'></i>
+                    <text>全部订单</text>
+                </view>
+            </view>
+            <view class="my_cell">
+                <view class="assets_item">
+                    <view class="assets_item_val">
+                        <view class="assets_val">
+                            6
+                            <text class="dot dot_spe"></text>
+                        </view>
+                    </view>
+                    <text class="assets_item_key">优惠券</text>
+                </view>
+                <view class="assets_item">
+                    <view class="assets_item_val">
+                        <text class="assets_val">2万+</text>
+                    </view>
+                    <text class="assets_item_key">白条额度</text>
+                </view>
+                <view class="assets_item">
+                    <view class="assets_item_val">
+                        <text class="assets_val">2万+</text>
+                    </view>
+                    <text class="assets_item_key">京豆</text>
+                </view>
+                <view class="assets_item">
+                    <view class="assets_item_val">
+                        <text class="assets_val">0</text>
+                    </view>
+                    <text class="assets_item_key">红包</text>
+                </view>
+                <view class="assets_item assets-all">
+                    <i class="icon-iconfont02fuzhi"></i>
+                    <text class="assets_item_key">我的资产</text>
+                </view>
+            </view>
+            <view class="serve-wrap">
+                <view class="activity-title">工具与服务</view>
+                <view class="serve_container">
+                    <view data-idx="0" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/custom-serve.png" />
+                        <text class="tools_item_key">客户服务</text>
+                    </view>
+                    <view data-idx="1" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/my_ans_serve.png" />
+                        <text class="tools_item_key">我的预约</text>
+                    </view>
+                    <view data-idx="2" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/my_answers_serve.png" />
+                        <text class="tools_item_key">我的问答</text>
+                    </view>
+                    <view data-idx="3" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/resev_serve.png" />
+                        <text class="tools_item_key">高价回收</text>
+                    </view>
+                    <view data-idx="4" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/pay_serve.png" />
+                        <text class="tools_item_key">闲置换钱</text>
+                    </view>
+                    <view data-idx="5" class="serve_item">
+                        <image class="serve-img" src="../../resources/images/my_appointment_serve.png" />
+                        <text class="tools_item_key">定期购</text>
+                    </view>
+                    <!--  -->
+                </view>
+            </view>
+            <view class='recommend'>
+                <view class="recommend_title">
+                    <text class="recommend_title_text">为您推荐</text>
+                </view>
+                <view class='recommend-list'>
+                    <c-goods-list goodsList='{{recommendList}}'></c-goods-list>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

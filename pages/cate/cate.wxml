@@ -1,0 +1,28 @@
+<view class="cate-root">
+    <view class="toolbar-root">
+        <c-toolbar isSearch="{{true}}" hasBack="{{false}}" />
+    </view>
+    <view class="cate-container" wx:if="{{cateListNode.length>0}}">
+        <scroll-view scroll-y="{{true}}" class="scroll-left" style="height:100%">
+            <view class="cate-left">
+                <view class="cate-item {{selectMenuIndex==index?'active-item':''}}" wx:for='{{cateListNode}}' data-index="{{index}}" bind:tap="menuItem">
+                    {{item.name}}
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view class="scroll-right" scroll-y="{{true}}" style="height:100%">
+            <view class="loading-wrapper" wx:if="{{isLoadingPro}}">
+                <image class='loading-img' wx:if="{{!loadMoreFinish}}" src="../../resources/images/loading.gif" />
+            </view>
+            <block wx:else>
+                <view class="page-row" wx:if="{{productList.length>0}}">
+                    <view class='page-item' wx:for='{{productList}}' wx:key='index'>
+                        <image class='pro-img' src='{{item.pic}}' />
+                        <text class='pro-name'>{{item.name}}</text>
+                    </view>
+                </view>
+                <c-empty wx:else></c-empty>
+            </block>
+        </scroll-view>
+    </view>
+</view>

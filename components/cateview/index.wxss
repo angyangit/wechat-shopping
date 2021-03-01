@@ -1,0 +1,60 @@
+.cate-wrapper{
+  position: relative;
+  width: 100%;
+  height: 400rpx;
+}
+.cate-bg{
+  width: 100%;
+  height: 100%;
+}
+.cate-bg-img{
+  width: 100%;
+  height: 100%;
+}
+.cate-container{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.cate-item-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  position: relative;
+}
+.cate-item-l{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.cate-item-r{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.cate-item-child{
+  height: 50%;
+  width: 20%;
+  float: left;
+}
+.child-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding-top: 40rpx;
+}
+.cate-icon{
+  width: 60rpx;
+  height: 60rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+.cate-name{
+  text-align: center;
+  padding-top: 10rpx;
+  font-size: 12px;
+}

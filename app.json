@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shopcar/shopcar",
+    "pages/mine/mine",
+    "pages/cate/cate",
+    "pages/product-detail/index",
+    "pages/login/index",
+    "pages/search/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "resources/images/home-def.png",
+        "selectedIconPath": "resources/images/home-sel.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "iconPath": "resources/images/cate-def.png",
+        "selectedIconPath": "resources/images/cate-sel.png"
+      },
+      {
+        "pagePath": "pages/shopcar/shopcar",
+        "iconPath": "resources/images/cart-def.png",
+        "selectedIconPath": "resources/images/cart-sel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "resources/images/me-def.png",
+        "selectedIconPath": "resources/images/me-sel.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

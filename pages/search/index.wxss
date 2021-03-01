@@ -1,0 +1,29 @@
+.search-page-tag {
+  background-color: white;
+}
+.search-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.search-page-content {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.toggle-icon {
+  right: 20px;
+  bottom: 80px;
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 20px;
+  background-color: #eee;
+  text-align: center;
+}
+.toggle-icon > i {
+  line-height: 30px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}

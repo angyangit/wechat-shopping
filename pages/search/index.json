@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "c-toolbar":"/components/toolbar/index",
+    "c-goods-list":"/components/goodslist/index",
+    "c-listview":"/components/listview/index",
+    "c-search-tag":"/components/search-tag/index",
+    "c-empty":"/components/empty/index"
+  }
+}

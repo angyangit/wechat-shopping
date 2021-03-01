@@ -1,0 +1,67 @@
+var isSelectCheckAll = function (selectList, shopcarList) {
+  return selectList.length > 0 && selectList.length === shopcarList.length
+}
+
+var isSelectCheck = function (selectList, id) {
+  for (var i = 0; i < selectList.length; i++) {
+    if (selectList[i].id === id) {
+      return true
+    }
+  }
+  return false
+}
+
+var getCountTotal = function (selectList) {
+  var countTotal = 0
+  if (selectList.length > 0) {
+    selectList.forEach(function (item) {
+      countTotal += item.quantity
+    })
+  }
+  return countTotal
+}
+
+var getTotalPrice = function (selectList) {
+  var totalPrice = 0
+  if (selectList.length > 0) {
+    selectList.forEach(function (item) {
+      totalPrice += item.price * item.quantity
+    })
+  }
+  return totalPrice
+}
+
+var setSelectSkuStyle = function (selectSkuArr, skuVal, key) {
+  console.log('setSelectSkuStyle', selectSkuArr)
+  var bo = false
+  selectSkuArr.forEach(function (item) {
+    {
+      if (skuVal === item.value) {
+        bo = true
+      }
+    }
+  })
+  return bo
+}
+
+var getSkuTip = function (selectSkuBean) {
+  console.log('selectSkuBean', selectSkuBean)
+
+  if (!selectSkuBean) return ''
+
+  var spDataJson = JSON.parse(selectSkuBean.spData)
+  return spDataJson
+    .map(function (item) {
+      return item.key + ':' + item.value
+    })
+    .join('  ,  ')
+}
+
+module.exports = {
+  isSelectCheckAll: isSelectCheckAll,
+  isSelectCheck: isSelectCheck,
+  getCountTotal: getCountTotal,
+  getTotalPrice: getTotalPrice,
+  setSelectSkuStyle: setSelectSkuStyle,
+  getSkuTip: getSkuTip,
+}

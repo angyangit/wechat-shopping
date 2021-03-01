@@ -1,0 +1,10 @@
+<view class="login-warpper">
+  <c-toolbar title="登陆" bind:onBackListener="backListener" />
+  <view class="login-content">
+    <input class='ipt' placeholder='请输入用户名'  placeholder-class="placeholder" bindinput="nameIpt"/>
+    <input class='ipt' placeholder='请输入密码' placeholder-class="placeholder" bindinput="pwdIpt"/>
+    <text class='login-error' hidden='{{!error}}'>{{error}}</text>
+    <button class="'btn-login' {{validSucc?'btn-login-active':''}}"
+    bind:tap="login">登 录</button>
+  </view>
+</view>

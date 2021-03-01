@@ -1,0 +1,5 @@
+<view class='count-wrapper'>
+  <text bind:tap='reduce' class='reduce {{count===1?"stop-reduce":""}}'>-</text>
+  <input confirm-type="done" type="number" class='count-ipt' value='{{count}}' bindconfirm="onPost" />
+  <text class='add' bind:tap='add'>+</text>
+</view>

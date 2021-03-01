@@ -1,0 +1,34 @@
+<!-- index.wxml -->
+<view class="index-page">
+    <view class="toolbar-root">
+        <c-toolbar isSearch="{{true}}" />
+    </view>
+    <view class="index-content">
+        <c-listview 
+        id="listview"
+        bind:refresh="refresh"
+        bind:loadMore="loadMore">
+            <view slot="content">
+                <view class="swiper-container">
+                <image class="img-wrapper" src="../../resources/images/banner-bg.jpg" />
+                <view class="swip-out">
+                    <c-swiper dataList='{{bannerList}}'></c-swiper>
+                </view>
+            </view>
+            <c-cateview dateList="{{cateList}}"></c-cateview>
+            <view class="brand-list-wrapper" wx:if="{{brandList.length>0}}">
+                <view class="list-contanier">
+                    <view class="title">品牌推荐</view>
+                    <view class="brand-contaniner">
+                        <view class="brand-item" wx:for="{{brandList}}" wx:key="*this">
+                            <image src="{{item.logo}}" />
+                            <text class="brand-name">{{item.name}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <c-goods-list goodsList='{{goodsList}}'></c-goods-list>
+            </view>
+        </c-listview >
+    </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents":{
+    "c-toolbar-trans":"/components/toolbar-trans/index",
+    "c-swiper":"/components/swiper/index",
+    "c-cateview":"/components/cateview/index",
+    "c-goods-list":"/components/goodslist/index",
+    "c-listview":"/components/listview/index"
+  }
+}
