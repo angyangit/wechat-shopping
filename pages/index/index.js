@@ -152,4 +152,12 @@ Page({
         })
       })
   },
+
+  brandSearch(event) {
+    const brandId = event.currentTarget.dataset['id']
+    const brandName = event.currentTarget.dataset['name']
+    wx.navigateTo({
+      url: `/pages/search/index?brandId=${brandId}&brandName=${brandName}`,
+    })
+  },
 })

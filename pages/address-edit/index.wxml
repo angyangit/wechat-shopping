@@ -1,0 +1,40 @@
+<view class="ads-edit-page">
+  <view class="tool-wrapper">
+    <c-toolbar title="{{title}}" hasBack="{{true}}" />
+  </view>
+  <view class="ads-row">
+    <text class="ads-lable">收货人</text>
+    <input value="{{name}}" bindinput="bindNameInput" placeholder-class="ipt-placeholder" class="ads-ipt" placeholder="姓名" />
+  </view>
+  <view class="ads-row">
+    <text class="ads-lable">联系方式</text>
+    <input value="{{phoneNumber}}" bindinput="bindConcatInput" placeholder-class="ipt-placeholder" class="ads-ipt" placeholder="手机号码" />
+  </view>
+  <view class="ads-row">
+    <text class="ads-lable">所在地区</text>
+    <picker style="flex-grow:1" class="placeholder" mode="multiSelector" bindchange="func_changeCitysChange" bindcolumnchange="func_changeCitysChangeColumn" value="{{ citysIndex }}" range="{{ cityArray }}">
+      <view bind:tap="showPop" class="ads-ipt">{{ssq?ssq:"省市区"}}</view>
+    </picker>
+    <view class="to-map" bind:tap="toMap">
+      <i class="icon-iconfontdizhi1" />
+      定位
+    </view>
+  </view>
+  <view class="ads-row">
+    <text class="ads-lable">详细地址</text>
+    <input value="{{detailAddress}}" bindinput="bindDetailAddressInput" placeholder-class="ipt-placeholder" class="ads-ipt" placeholder="街道、门牌" />
+  </view>
+  <view class="ads-row">
+    <text class="ads-lable">邮政编码</text>
+    <input value="{{postCode}}" bindinput="bindpostCodeInput" placeholder-class="ipt-placeholder" class="ads-ipt" placeholder="邮政编码" />
+  </view>
+  <view class="ads-default">
+    <view class="ads-default-lable">
+      <text class="ads-lable">设置默认地址</text>
+      <text>提醒:每次下单会默认推荐使用该地址</text>
+    </view>
+    <switch checked="{{isDeftrue}}" bindchange="switch" />
+  </view>
+  <view bind:tap="editAddress" class="btn-edit">{{editItem?"修改收货地址":"新增收货地址"}}</view>
+  <view wx:if="{{editItem}}" bind:tap="delAddress" class="btn-del">删除地址</view>
+</view>

@@ -1,0 +1,48 @@
+<wxs src="../../utils/filter.wxs" module="util" />
+<view class='confirm-root'>
+  <view class="tool-wrapper" >
+    <c-toolbar title="确认订单" hasBack="{{true}}" />
+  </view>
+  <view wx:if="{{memberReceiveAddressList.length>0}}" class='address-wrapper' bind:tap="toAddressList">
+    <view class='address-content'>
+      <view class='person-info'>
+        <text>{{util.getAddress(memberReceiveAddressList).name}}</text>
+        <text>{{util.getAddress(memberReceiveAddressList).viewhoneNumber}}</text>
+      </view>
+      <view class='address-def'>
+        <text>默认</text>
+        <view>{{util.getAddress(memberReceiveAddressList).address}}</view>
+      </view>
+      <i class='icon-iconfontright address-icon'></i>
+    </view>
+  </view>
+  <scroll-view class='order-confirm' scroll-y="{{true}}" bindscroll='scrollListener'>
+    <view class='order-confirm-content'>
+      <view class='pro-list-wrapper'>
+        <view class='pro-list-container'>
+          <view class='pro-list-item' wx:for="{{cartPromotionItemList}}">
+            <view class='pro-list-item-content'>
+              <image class='pro-img' src="{{item.productPic}}" />
+              <view class='pro-info'>
+                <view class='title'>{{item.productSubTitle}}</view>
+                <view class='price-count'>
+                  <view class="price">
+                    <text>¥</text>
+                    <text class='large_size'>{{item.price}}</text>
+                    <text class="price_decimals">.00</text>
+                  </view>
+                  <text>{{item.quantity}}</text>
+                </view>
+              </view>
+            </view>
+            <text class='attation-del'></text>
+          </view>
+        </view>
+      </view>
+      <view class='btn-wrapper'>
+        <view class='btn-confirm-order'>确认订单</view>
+      </view>
+      <text class='bottom-wrapper'></text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,39 @@
+.setting-page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.setting-row {
+  display: flex;
+  line-height: 100rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: white;
+  padding: 0 20rpx;
+  justify-content: space-between;
+}
+.setting-lable {
+  color: black;
+  font-weight: 700;
+}
+
+.btn-edit {
+  position: absolute;
+  width: 600rpx;
+  left: 0;
+  right: 0;
+  color: white;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 50rpx;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: var(--themeColor);
+  bottom: 80rpx;
+}
+

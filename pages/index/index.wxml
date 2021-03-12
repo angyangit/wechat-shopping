@@ -20,7 +20,7 @@
                 <view class="list-contanier">
                     <view class="title">品牌推荐</view>
                     <view class="brand-contaniner">
-                        <view class="brand-item" wx:for="{{brandList}}" wx:key="*this">
+                        <view data-name="{{item.name}}" data-id="{{item.id}}" bind:tap="brandSearch" class="brand-item" wx:for="{{brandList}}" wx:key="*this">
                             <image src="{{item.logo}}" />
                             <text class="brand-name">{{item.name}}</text>
                         </view>

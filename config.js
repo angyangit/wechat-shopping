@@ -16,6 +16,7 @@ const cache = {
 
 const apiConstants = {
   BASE_API: 'https://www.angyangit.xyz',
+  // BASE_API: 'http://localhost:8085',
 
   //首页内容页信息展示
   HOME_INFO: '/home/content',
@@ -56,6 +57,14 @@ const apiConstants = {
   BRAND_PRODUCTLIST: '/brand/productList',
   //获取品牌详情
   BRAND_DETAIL: '/brand/detail',
+
+  //收货地址
+  ADDRESS_LIST: '/member/address/list',
+  ADDRESS_UPDATE: '/member/address/update',
+  ADDRESS_ADD: '/member/address/add',
+  ADDRESS_DELETE: '/member/address/delete',
+  ADDRESS_DETAIL: '/member/address',
+
 
   STATUSBAR_HEIGHT: 'STATUSBAR_HEIGHT',
   WINDOW_WIDTH: 'WINDOW_WIDTH',

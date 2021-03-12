@@ -1,0 +1,18 @@
+<view class="setting-page">
+  <c-toolbar title="账户设置" hasBack="{{true}}" />
+  <view class="setting-row" bind:tap="toAddressList">
+    <text class="setting-lable">我的收货地址</text>
+    <view class="setting-content">
+      管理我的地址
+      <i class="icon-cebianlanzhankai"></i>
+    </view>
+  </view>
+  <view class="setting-row">
+    <text class="setting-lable">密码管理</text>
+    <view class="setting-content">
+      管理密码
+      <i class="icon-cebianlanzhankai"></i>
+    </view>
+  </view>
+  <view bind:tap="editAddress" class="btn-edit">退出登录</view>
+</view>

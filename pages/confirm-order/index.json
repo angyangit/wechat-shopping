@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-toolbar":"/components/toolbar/index"
+
+  }
+}

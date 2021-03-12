@@ -54,7 +54,10 @@ Component({
    */
   methods: {
     back() {
-      this.triggerEvent('onBackListener')
+      // this.triggerEvent('onBackListener')
+      wx.navigateBack({
+        delta: 1,
+      })
     },
     inputChange(e) {
       if (this.timeout) clearTimeout(this.timeout)

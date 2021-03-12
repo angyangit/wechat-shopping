@@ -1,0 +1,6 @@
+<view>
+  <view class="tool-wrapper">
+    <c-toolbar title="购物车" hasBack="{{false}}" />
+  </view>
+  <web-view src="{{url}}"></web-view>
+</view>

@@ -136,6 +136,15 @@ Page({
       })
       return
     }
+    console.log(this.data.selectList)
+    const cartIds = this.data.selectList.map((item) => {
+      return item.id
+    })
+    console.log(cartIds)
+    
+    wx.navigateTo({
+      url: '/pages/confirm-order/index?cartIds='+ JSON.stringify(cartIds)
+    })
   },
   _getCartList() {
     this.setData({ isLoad: true })

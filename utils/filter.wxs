@@ -57,6 +57,18 @@ var getSkuTip = function (selectSkuBean) {
     .join('  ,  ')
 }
 
+var getAddress = function (memberReceiveAddressList) {
+  var address = memberReceiveAddressList && memberReceiveAddressList[0]
+  console.log('address', address)
+  return {
+    name: address ? address.name : '',
+    phoneNumber: address ? address.phoneNumber : '',
+    address: address
+      ? address.province + address.city + address.region + address.detailAddress
+      : '',
+  }
+}
+
 module.exports = {
   isSelectCheckAll: isSelectCheckAll,
   isSelectCheck: isSelectCheck,
@@ -64,4 +76,5 @@ module.exports = {
   getTotalPrice: getTotalPrice,
   setSelectSkuStyle: setSelectSkuStyle,
   getSkuTip: getSkuTip,
+  getAddress: getAddress,
 }

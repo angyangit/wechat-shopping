@@ -21,16 +21,26 @@ Page({
   },
 
   onShow: function () {
-    console.log('mine onShow')
+    console.log('mine onShow', getToken())
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
         selected: 3,
       })
     }
-    const token = getApp().globalData.token
-    if (token) {
+    const token = getToken()
+    if (token ) {
       this._getMemberInfo()
     }
+  },
+  toSetting() {
+    if (!getToken()) {
+      wx.navigateTo({
+        url: '/pages/login/index',
+      })
+    }
+    wx.navigateTo({
+      url: '/pages/setting/index',
+    })
   },
   scroll(e) {
     const scrollTop = e.detail.scrollTop

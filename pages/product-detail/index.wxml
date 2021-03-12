@@ -19,7 +19,7 @@
       </view>
     </view>
   </view>
-  <scroll-view wx:if="{{proInfo}}" class="scroll-content" scroll-y="{{true}}" scroll-into-view="{{tabIndex}}">
+  <scroll-view scroll-with-animation="true" wx:if="{{proInfo}}" class="scroll-content" scroll-y="{{true}}" scroll-into-view="{{tabIndex}}">
     <view class='pro-info-wrapper' id='productWrapper'>
       <view class='pro-top'>
         <swiper style="height:200px" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="white" indicator-active-color="#e33e33">
@@ -191,7 +191,7 @@
       <view class='shopcar-wraper' bind:tap='goShopCar'>
         <i class='icon-iconfontcart'></i>
         <text>购物车</text>
-        <text class='car-count'>0</text>
+        <text class='car-count'>{{relCount}}</text>
       </view>
     </view>
     <view class='car-r'>

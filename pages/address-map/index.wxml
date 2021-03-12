@@ -1,0 +1,23 @@
+<view class="map-page">
+  <map id="map" longitude="{{myLongitude}}" latitude="{{myLatitude}}" scale="18" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location>
+    <cover-image class="cover-image" bindtap="back" src="../../resources/images/back_img.png" />
+    <cover-image class="cover-image_location" bindtap="toMyLocation" src="../../resources/images/location.png" />
+  </map>
+  <view class="map-panel" bindtouchmove="touchMove">
+    <view class="map-search">
+      <view wx:if="{{!iptFocus}}" class="map-tip">
+        <i class="icon-sousuo serch-icon"></i>
+        搜索地点
+      </view>
+      <input bindfocus="bindfocus" bindinput="inputChange" value="{{iptValu}}" class="serch-ipt" />
+    </view>
+    <scroll-view class="map-scroll" scroll-y="{{true}}">
+      <block wx:for="{{addressList}}" wx:for-item="item" wx:for-index="index" wx:key="item.orderId">
+        <view class="weui-media-box weui-media-box_text" bindtap='clickItem' data-item='{{item}}' data-address='{{item.address}}' style='background-color:#fff;'>
+          <view class="location-title">{{item.title}}</view>
+          <view class="location-des">{{item.address}}</view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

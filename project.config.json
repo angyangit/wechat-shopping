@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -63,6 +63,49 @@
         {
           "name": "pages/search/index",
           "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/address-map/index",
+          "pathName": "pages/address-map/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/address-edit/index",
+          "pathName": "pages/address-edit/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cate-product/index",
+          "pathName": "pages/cate-product/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/setting/index",
+          "pathName": "pages/setting/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/address-list/index",
+          "pathName": "pages/address-list/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/confirm-order/index",
+          "pathName": "pages/confirm-order/index",
+          "query": "cartIds=[41]",
+          "scene": null
+        },
+        {
+          "name": "pages/shopcar/shopcar",
+          "pathName": "pages/shopcar/shopcar",
+          "query": "",
           "scene": null
         }
       ]

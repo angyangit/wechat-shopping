@@ -25,11 +25,21 @@ Component({
   lifetimes: {
     attached() {
       console.log('attached', this.data.dataList)
-    }
+    },
   },
 
   /**
    * 组件的方法列表
    */
-  methods: {},
+  methods: {
+    toWeb(event) {
+      const url = event.currentTarget.dataset['url']
+      const navtitle = event.currentTarget.dataset['tip']
+      console.log('toweb==' + url)
+      console.log('toweb==11---' + navtitle)
+      wx.navigateTo({
+        url: `/pages/webview/index?navTip=${navtitle}&url=${url}`,
+      })
+    },
+  },
 })

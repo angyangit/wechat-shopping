@@ -48,10 +48,12 @@ export function request(
   method,
   url,
   data,
-  header = {
-    // 'Content-Type': 'application/x-www-form-urlencoded',
-    Authorization: getToken(),
-  }
+  header = header
+    ? header
+    : {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: getToken(),
+      }
 ) {
   console.log('baseApi----', getApp().globalData.token)
   console.group('==============>新请求<==============')

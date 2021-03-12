@@ -1,0 +1,48 @@
+.ads-list-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #f1f1f1;
+}
+.address-item {
+  flex-grow: 1;
+}
+.address-item > view:first-child > text {
+  color: black;
+  font-weight: 600;
+  padding-right: 5px;
+}
+.address-item > view {
+  padding: 5px 10px;
+}
+.address-item > view > text {
+  line-height: 50rpx;
+}
+.ads-edit-btn {
+  flex-shrink: 0;
+  color: var(--themeColorLight);
+  padding: 0 10px;
+}
+.ads-def {
+  padding: 1px 2px;
+  font-size: 12px;
+  color: var(--themeColorLight);
+  margin-right: 10px;
+  border: 1px solid var(--themeColorLight);
+}
+.btn-edit {
+  position: absolute;
+  width: 600rpx;
+  left: 0;
+  right: 0;
+  color: white;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 50rpx;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: var(--themeColor);
+  bottom: 80rpx;
+}

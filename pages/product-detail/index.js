@@ -22,6 +22,7 @@ Page({
     selectSkuArr: [],
     selectSkuBean: undefined,
     buyCount: 1,
+    relCount: 0,
     navBarHeight: app.globalData.navBarHeight, //导航栏高度
     menuRight: app.globalData.menuRight, // 胶囊距右方间距（方保持左、右间距一致）
     menuBotton: app.globalData.menuBotton,
@@ -94,13 +95,16 @@ Page({
     console.log('selectSkuBean', this.data.selectSkuBean)
     console.log('memberInfo', memberInfo)
 
-    if (this.buyCount <= 0) {
+    if (this.data.buyCount <= 0) {
       wx.showToast({
         title: '选择商品',
         icon: '',
       })
       return
     }
+    this.setData({
+      relCount: this.data.buyCount,
+    })
     if (!memberInfo) {
       wx.navigateTo({
         url: '/pages/login/index',
@@ -258,6 +262,11 @@ Page({
     }
     this.setData({
       recommendList: arr,
+    })
+  },
+  goShopCar() {
+    wx.switchTab({
+      url: '/pages/shopcar/shopcar',
     })
   },
 })

@@ -58,19 +58,25 @@ Page({
       },
       'aa',
     ],
+    brandId: 0,
   },
   onLoad: function (options) {
-    this.handlerNearKeyUi()
+    console.log(options)
+    const brandName = options.brandName
+    const brandId = options.brandId
+    if (brandId > 0) {
+      this.setData({
+        brandId: brandId,
+      })
+      this._productSearch()
+    } else {
+      this.handlerNearKeyUi()
+    }
   },
   onShow: function () {},
   toggleListUi() {
     this.setData({
       multipleShow: !this.data.multipleShow,
-    })
-  },
-  onBackListener() {
-    wx.navigateBack({
-      delta: 1,
     })
   },
   onInputChange(e) {
@@ -104,13 +110,13 @@ Page({
       isloading: true,
     })
     this.handlerKeyLocal(this.data.keyword)
-    if (!this.data.keyword) {
-      return
-    }
     const productSearchOption = {
       pageNum: this.data.pageNum,
       pageSize: this.data.pageSize,
       keyword: this.data.keyword,
+    }
+    if (this.data.brandId > 0) {
+      productSearchOption['brandId'] = this.data.brandId
     }
     productSearch(productSearchOption)
       .then((res) => {

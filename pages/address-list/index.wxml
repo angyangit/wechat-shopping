@@ -1,0 +1,19 @@
+<view class="address-list-page">
+  <c-toolbar title="收货地址" hasBack="{{true}}" />
+  <block wx:for="{{addressList}}">
+    <view class="ads-list-wrapper">
+      <view class="address-item">
+        <view>
+          <text>{{item.name}}</text>
+          <text>{{item.phoneNumber}}</text>
+        </view>
+        <view>
+          <text class="ads-def" wx:if="{{item.defaultStatus}}">默认</text>
+          <text>{{item.province+item.city+item.region+item.detailAddress}}</text>
+        </view>
+      </view>
+      <text  data-item="{{item}}"  class="ads-edit-btn" bind:tap="toEdit">编辑</text>
+    </view>
+  </block>
+  <view bind:tap="addAddress" class="btn-edit">新增收货地址</view>
+</view>
